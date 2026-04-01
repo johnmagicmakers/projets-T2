@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-col bg-cyan-200 min-h-screen">
+    <header class="flex items-center gap-4 px-6 py-4">
+        <div>
+            <img class="object-scale-down max-w-24" src="/static/dieuxgrecs.png">
+        </div>
+        <div>
+            <h2>Quel star est-tu ?</h2>
+            <h4>Découvre à qui tu ressembles...</h4>
+        </div>
+
+    </header>
+    <main class="flex-1 flex flex-col justify-center mb-24 gap-4">
+        
+        <div class="border rounded-lg border-slate-50 p-4">
+            <div>Question numéro {{numero_question + 1}} :</div>
+            <p class="mb-6">{{ enonce }}</p>
+            <ul class="flex flex-col items-center gap-1">
+                <a href="/reponse/0"><li>{{reponses[0]}}</li></a>
+                <a href="/reponse/1"><li>{{reponses[1]}}</li></a>
+                <a href="/reponse/2"><li>{{reponses[2]}}</li></a>
+                <a href="/reponse/3"><li>{{reponses[3]}}</li></a>
+            </ul>
+        </div>
+        
+
+
+    </main>
+    <footer class="flex justify-center py-4 gap-64">
+        <p>🔱</p>
+        <p>🔱🔱🔱</p>
+        <p>🔱</p>
+        <p>🔱🔱</p>
+    </footer>
+</body>
+</html>

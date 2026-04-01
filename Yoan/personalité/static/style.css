@@ -1,0 +1,176 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #6092fd 0%, #2d3e5f 50%, #002e91 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #d4a574;
+            overflow-x: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #d4a574;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .header-item {
+            flex: 1;
+            padding: 0 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        .card {
+            border: 2px solid #d4a574;
+            border-radius: 15px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 500px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h1 {
+            font-size: 28px;
+            color: #d4a574;
+            margin-bottom: 15px;
+            font-weight: normal;
+            letter-spacing: 0.5px;
+        }
+
+        .card p {
+            font-size: 18px;
+            color: #d4a574;
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .test-link {
+            display: inline-block;
+            color: #5b9cff;
+            text-decoration: underline;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .test-link:hover {
+            color: #8bb9ff;
+            text-decoration: none;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #d4a574;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        .footer-item {
+            flex: 1;
+            padding: 0 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            background-color: #d4a574;
+            color: #2d3e5f;
+            border-radius: 50px;
+            padding: 5px 20px;
+
+        }
+        .reponse{
+
+            margin-right: 10px;
+        }
+        .titre{
+            text-align: center;
+            margin-top: 200px;
+            margin-bottom: -40px;
+            background-color: #d4a574;
+            color: #2d3e5f;
+            display: inline-block;
+            border-radius: 50px;
+            
+        }
+        .expli{
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 100px;
+            padding: 20px;
+        }
+        .images-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-items: center;
+            max-width: 700px;
+            margin: 30px auto;
+        }
+        .image{
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: contain;
+            display: block;
+            border: 2px solid #d4a574;
+            
+        }
+        .image:hover{
+            box-shadow: 0 0 15px #d4a574;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            background-color: aqua;
+        }
+        .divtitre{
+            display: flex;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .header, .footer {
+                flex-direction: column;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .header-item, .footer-item {
+                padding: 10px 0;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            .card h1 {
+                font-size: 22px;
+            }
+
+            .card p {
+                font-size: 16px;
+            }
+        }

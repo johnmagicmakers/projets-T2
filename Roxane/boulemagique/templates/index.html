@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La boule magique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4 flex items-center justify-center bg-pink-50 ">
+    <section class="bg-gray-50 p-8 rounded-lg border-4 border-gray-900">
+
+    <header>
+        <div class="flex justify-center py-6">
+            <img src="../static/boulemagique.png" class="w-58 h-40"/>
+        </div>
+        <div>
+            <h1 class="text-2xl bg-violet-300 p-4 rounded-lg text-center border-4 border-purple-900">La boule magique</h1>
+            <p class="text-2xl text-center my-6 bg-violet-200 border-4 border-purple-900 mx-64 p-4 rounded-lg ">Demandez au destin !!!</p>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-2 gap-4">
+        <div>
+            <img src="../static/2emeimage.png" class="w-58 h-40">
+        </div>
+        <div class="border-4 border-purple-900 rounded-lg flex px-6 pt-6 bg-violet-100 pr-4">
+            <form method="post">
+                <label for="question">Où veux-tu aller ?</label>
+                <input name="question" type="text" class="border-purple-900 border-2 rounded-lg">
+                <button type="submit" class="mt-6 bg-fuchsia-400 px-4 py-2 rounded-lg flex jutify-right hover:bg-fuchsia-500 focus:outline-2 focus:outline-offset-2 focus:outline-fuchsia-400 active:bg-fuchsia-400 border-2 border-fuschia-900">Lancer la prophétie</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <section class="border-4 border-purple-900 rounded-lg mt-6 bg-violet-100 pr-4 text-center py-4" >
+            <p>Ceci est la réponse</p>
+            {% if response %}
+                <p>{{ response }}</p>
+            {% endif %}
+        </section>
+    </footer>
+
+    </section>
+</body>
+</html>

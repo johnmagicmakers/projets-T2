@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La boule magique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-4 flex items-center justify-center bg-blue-100">
+    <section>
+        <header class="flex justify-center items-center gap-6 border-b-4 border-blue-200 m-4">
+            <div>
+                <img class="w-24" src="../static/crystal-ball-isolate-on-transparency-background-png.png" />
+            </div>
+            <div>
+                <h1 class = "text-3xl font-bold">La boule magique</h1>
+                <p class="font-bold" > 🪄 Demandez au destin</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="flex justify-center">
+                <img class="w-96" src="../static/cartes-scaled.jpg" />
+            </div>
+
+            <div>
+                <form method="POST">
+                    <label class="pt-2 block mb-2 text-lg font-semibold text-lg" for="question">Où veux-tu aller ?</label>
+                    <input name="question" type="text" class="border border-blue-300 rounded w-full mb-4"/>
+                    <button type="submit" class="mt-2 w-full bg-gradient-to-r from-blue-200 to-yellow-50 font-semibold py-3 rounded-lg hover:from-blue-300 hover:to-yellow-100 transition duration-300 shadow-md">Lancer la prophétie</button>
+                </form>
+            </div>
+        </main>
+ <footer>
+        {% if response %}
+        <section class="flex items-center justify-center p-6 flex-col">
+                <!-- <p><i>{{ question }}??</i></p> -->
+                <p>{{ response }}</p>
+        </section>
+        {% endif %}
+    </footer>
+    </section>
+</body>
+</html>```

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quelle star es tu ?</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    
+<div class="main-content">
+    <main class="card" >
+        {% if resultat %}
+            <h2>{{ resultat }}</h2>
+            
+            <a href="/" class="test-link">Recommencer</a>
+        {% elif question %}
+            <h2>Question {{ num + 1 }}</h2>
+            <p>{{ question.texte }}</p>
+            <ul>
+            <form method="POST" action="/save_answer">
+                <li>
+                    <input class="reponse" type="radio" name="answer" value="A"> {{ question.options[0] }}
+                </li>
+                <li>
+                    <input class="reponse" type="radio" name="answer" value="B"> {{ question.options[1] }}
+                </li>
+                <li>
+                    <input class="reponse" type="radio" name="answer" value="C"> {{ question.options[2] }}
+                </li>
+                <li>
+                    <input class="reponse" type="radio" name="answer" value="D"> {{ question.options[3] }}
+                </li>
+                <button class="btn" type="submit">Suivant</button>
+                
+            </form>
+            </ul>
+        {% endif %}
+    </main>
+</div>
+
+</body>
+</html>

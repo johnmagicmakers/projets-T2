@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-col p-4 items-center justify-center bg-[url('../static/constellations3.jpg')] bg-no-repeat bg-cover gap-7">
+    <div class="flex flex-col gap-40">
+        <header class="flex justify-center items-center flex-col ">
+        <div class="flex flex-col text-center gap-7 text-yellow-500 ">
+            <h2 class="underline decoration-2 w-full size-10 font-bold font-serif text-3xl">Quizz Saint Seiya</h2>
+            <h2 class="text-sm w-full size-7 text-xl">Quel type de chevalier es-tu ?</h2>
+        </div>
+        </header>
+
+        <main class="flex flex-col">
+            <div class="flex flex-col">
+                <div class="flex flex-col border border-slate-50 rounded-lg p-4 w- gap-7 font-bold text-yellow-500 size-3 w-full justify-center">
+                    <b>Tu es un chevalier de {{resultat}} ! {{personnalite}}</b>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="flex justify-center items-center flex-col gap-7">
+            <div class="flex flex-col">
+                <div class=" flex flex-col border border-slate-50 rounded-lg p-4 gap-7">
+                    <a href="/"><b>Retour à l'accueil</b></a>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>
