@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le pendu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-lime-200 flex flex-col justify-center items-center">
+
+    <header>
+        <h1 class="text-center p-6 mb-4 text-xl font-bold">Le pendu</h1>
+        <img src="static/images/pendu{{etat_jeu['vies']}}.png" class="h-40">
+    </header>
+
+    <main class="flex flex-col items-center gap-4">
+        <p>{{ etat_jeu["mot_a_afficher"] }}</p>
+        <p>Vies : {{ etat_jeu["vies"] }}</p>
+        <form action="/deviner" method="POST" class="flex flex-col items-center">
+            <input type="text" name="essai">
+            <button type="submit" class="bg-lime-100 rounded-full m-2 p-2 shadow-lg">Valider</button>
+        </form>
+        {% if etat_jeu["victoire"] %}
+        <div class="italic">Victoire ! Votre score est maintenant {{ score }}</div>
+        <a href="/"><button class="bg-lime-100 rounded-full m-2 p-2 shadow-lg">Relancer</button></a>
+        {% elif etat_jeu["defaite"] %}
+        <div class="italic">Défaite !</div>
+        <div>Le mot était : {{ etat_jeu["mot_a_deviner"] }}</div>
+        <a href="/"><button class="bg-lime-100 rounded-full m-2 p-2 shadow-lg">Réessayer</button></a>
+        {% endif %}
+    </main>
+    <footer>
+        <p>Score : {{ score }}</p>
+        <p>Record : {{ record }}</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.titre {
+    scale: 3px;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.titre:hover {
+    color: #1e5c21;
+    transform: rotate(360deg);
+}
+
+.vie {
+    font-size: 1.5em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.mot {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e5c21;
+    scale: 1.05;
+}
+.victoire {
+    color: green;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+.defaite {
+    color: red;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+.score {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+.resultat {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: min(90%, 420px);
+    display: inline-block;
+}
+.score {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.classement-beau {
+    margin-top: 30px;
+    background-color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 20px;
+    width: min(90%, 500px);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.classement-beau h2 {
+    color: #4CAF50;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.liste-classement {
+    list-style: none;
+    padding: 0;
+    counter-reset: ranking;
+}
+
+.item-classement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border-left: 5px solid #4CAF50;
+    counter-increment: ranking;
+}
+
+.item-classement:before {
+    content: counter(ranking) ". ";
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+.score-classement {
+    font-weight: bold;
+    color: #4CAF50;
+    font-size: 1.2em;
+}
+
+.titre-classement {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.legende {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 15px;
+}
+
+.lien-classement {
+    display: inline-block;
+    margin-top: 15px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lien-classement:hover {
+    text-decoration: underline;
+}
+.victoire, .defaite {
+    text-align: center;
+    margin: 4px 0;
+}
+.fab {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    padding: 8px 10px;
+    min-width: 120px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    color: #f0f0f0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 100;
+    text-align: center;
+}
+.fab:hover {
+    background-color: #222;
+    transform: none;
+}

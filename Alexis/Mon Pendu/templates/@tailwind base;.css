@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MaPolice';
+  src: url('./fonts/Minecraft.ttf') format('tff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.lettre-barree {
+  text-decoration: line-through;
+  color: #ff4c4c;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.clavier {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 400px;
+}
+
+.clavier button {
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #333;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.lettre-barree {
+  text-decoration: line-through;
+  color: #ff4c4c;
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  opacity: 0.5;
+  pointer-events: none;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  /* Couleurs pastel/chill */
+  background: linear-gradient(45deg, #a8c0ff, #fbc2eb, #a18cd1, #fad0c4);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.bloc {
+  position: relative;
+height: 100vh;
+width: 100%;
+overflow: hidden;
+}
+
+* {
+  margin: 0;
+}
+
+.bloc video {
+  position: absolute;
+min-width: 100%;
+min-height: 100%;
+top: 50%;
+left: 50%;
+z-index: -100;
+transform: translate(-50%, -50%)
+}

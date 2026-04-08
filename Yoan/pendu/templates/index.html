@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pendu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="body">
+    <header >
+        <h1 class="titre">Le Pendu</h1>
+    
+    
+    </header>
+    {% if data["vies"] == 6 %}
+      <img src="{{ url_for('static', filename='1.jpg') }}" alt="Pendu 1" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% elif data["vies"] == 5 %}
+      <img src="{{ url_for('static', filename='2.jpg') }}" alt="Pendu 2" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% elif data["vies"] == 4 %}
+      <img src="{{ url_for('static', filename='3.jpg') }}" alt="Pendu 3" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% elif data["vies"] == 3 %}
+      <img src="{{ url_for('static', filename='4.jpg') }}" alt="Pendu 4" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% elif data["vies"] == 2 %}
+      <img src="{{ url_for('static', filename='5.jpg') }}" alt="Pendu 5" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% elif data["vies"] == 1 %}
+      <img src="{{ url_for('static', filename='6.jpg') }}" alt="Pendu 6" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% elif data["vies"] == 0 %}
+      <img src="{{ url_for('static', filename='8.jpg') }}" alt="Pendu 8" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% else %}
+      <img src="{{ url_for('static', filename='7.jpg') }}" alt="Pendu 7" style="max-width:320px; width:100%; margin-bottom:1rem;">
+    {% endif %}
+    
+    <p class="mot">MOT : {{ data["mot_a_afficher"] }}</p>
+    <p class="vie">vie :{{ data["vies"] }}</p>
+    <p class="score">Temps : {{ data["temps_total"] }}s • Erreurs : {{ data["erreurs"] }}</p>
+    <h3>Deviner une lettre :</h3>
+    <form action="/deviner" method="post">
+        <input type="text" name="essai" maxlength="1" required>
+        <button type="submit">Deviner</button>
+        </form>
+        <h3>Deviner le mot entier :</h3>
+        <form action="/deviner" method="post">
+        <input type="text" name="essai" maxlength="10" required>
+        <button type="submit">Deviner</button>
+        </form>
+        {% if data["victoire"] or data["defaite"] %}
+            <div class="resultat">
+            {% if data["victoire"] %}
+                <p class="victoire"> Gagné !</p>
+            {% else %}
+                <p class="defaite"> Perdu !</p>
+            {% endif %}
+            <p class="score">Temps : {{ data["temps_total"] }} secondes<br>Erreurs : {{ data["erreurs"] }}  <br>Score : {{ data["score"] }}</p>
+            <form action="/recommencer" method="post">
+                <button type="submit">Rejouer</button>
+            </form>
+            </div>
+        {% endif %}
+        <button class="fab" type="button">{{ data["mot_a_deviner"] }}</button>
+
+        <div class="classement-beau">
+          <h2>🏆 Classement des Champions 🏆</h2>
+          <ol class="liste-classement">
+            {% for item in ranked_scores %}
+              <li class="item-classement">
+                <span class="score-classement">{{ item.score }} pts</span>
+                <span class="titre-classement">{{ item.title }}</span>
+              </li>
+            {% endfor %}
+          </ol>
+          <p class="legende">900+ : Maître, 800+ : Expert, 700+ : Habitué, 600+ : Apprenti, 500+ : Survivant, 300+ : Débutant !</p>
+          
+        </div>
+</body>
+</html>
